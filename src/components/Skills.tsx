@@ -1,151 +1,52 @@
-import { Palette, Code2, Wrench, Cpu } from 'lucide-react';
-
 export default function Skills() {
-  const skillCategories = [
-    {
-      title: 'UI/UX Design',
-      icon: Palette,
-      color: 'blue',
-      skills: [
-        { name: 'UI Design', level: 90 },
-        { name: 'UX Design', level: 85 },
-        { name: 'Wireframing', level: 88 },
-        { name: 'Prototyping', level: 87 },
-        { name: 'Design Systems', level: 82 },
-        { name: 'Usability & Accessibility', level: 85 },
-      ],
-    },
-    {
-      title: 'Design Tools',
-      icon: Wrench,
-      color: 'cyan',
-      skills: [
-        { name: 'Figma', level: 92 },
-        { name: 'FigJam', level: 88 },
-        { name: 'Adobe Illustrator', level: 80 },
-        { name: 'Canva', level: 85 },
-        { name: 'Blender', level: 75 },
-      ],
-    },
-    {
-      title: 'Frontend Development',
-      icon: Code2,
-      color: 'teal',
-      skills: [
-        { name: 'HTML5', level: 90 },
-        { name: 'CSS3', level: 88 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'Responsive Design', level: 92 },
-      ],
-    },
-    {
-      title: 'Programming',
-      icon: Cpu,
-      color: 'green',
-      skills: [
-        { name: 'Java (Core)', level: 80 },
-        { name: 'OOP', level: 82 },
-        { name: 'Data Structures', level: 78 },
-      ],
-    },
+  const skills = [
+    { name: 'HTML', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', alt: 'HTML' },
+    { name: 'CSS', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', alt: 'CSS' },
+    { name: 'JavaScript', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', alt: 'JavaScript' },
+    { name: 'React', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', alt: 'React' },
+    { name: 'MySQL', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', alt: 'MySQL' },
+    { name: 'Java', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', alt: 'Java' },
+    { name: 'Python', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', alt: 'Python' },
+    { name: 'Power BI', src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/powerbi.svg', alt: 'Power BI', extraClass: 'filter invert bg-white' },
+    { name: 'Excel', src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoftexcel.svg', alt: 'Excel', extraClass: 'filter invert bg-white' },
+    { name: 'Eclipse', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg', alt: 'Eclipse' },
+    { name: 'VS Code', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', alt: 'Visual Studio Code', extraClass: 'ml-5' },
+    { name: 'GitHub', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', alt: 'GitHub', extraClass: 'filter invert bg-white' },
   ];
 
-  const getColorClasses = (color: string) => {
-    const colors = {
-      blue: {
-        gradient: 'from-blue-600 to-blue-400',
-        bg: 'bg-blue-100 dark:bg-blue-900/20',
-        border: 'border-blue-200 dark:border-blue-800',
-        text: 'text-blue-600',
-        progress: 'bg-blue-600',
-      },
-      cyan: {
-        gradient: 'from-cyan-600 to-cyan-400',
-        bg: 'bg-cyan-100 dark:bg-cyan-900/20',
-        border: 'border-cyan-200 dark:border-cyan-800',
-        text: 'text-cyan-600',
-        progress: 'bg-cyan-600',
-      },
-      teal: {
-        gradient: 'from-teal-600 to-teal-400',
-        bg: 'bg-teal-100 dark:bg-teal-900/20',
-        border: 'border-teal-200 dark:border-teal-800',
-        text: 'text-teal-600',
-        progress: 'bg-teal-600',
-      },
-      green: {
-        gradient: 'from-green-600 to-green-400',
-        bg: 'bg-green-100 dark:bg-green-900/20',
-        border: 'border-green-200 dark:border-green-800',
-        text: 'text-green-600',
-        progress: 'bg-green-600',
-      },
-    };
-    return colors[color as keyof typeof colors];
-  };
-
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-20 bg-white dark:bg-black">
+      <div className="max-w-5xl mx-auto px-4 sm:px-3 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Skills & Expertise
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto rounded-full"></div>
+          <h4 className="text-3xl font-bold text-gray-900 dark:text-white">SKILLS</h4>
+          <div className="w-20 h-1 bg-black mx-auto rounded-full"></div>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A comprehensive toolkit for creating exceptional digital experiences
+            A showcase of my work, featuring real-world applications and innovative solutions.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {skillCategories.map((category, idx) => {
-            const colorClasses = getColorClasses(category.color);
-            const Icon = category.icon;
+        <div className="skill-show">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+            {skills.map((skill, index) => (
+              <div key={index} className="skill group relative rounded-3xl transition-transform duration-300 hover:-translate-y-1">
+                <div className="absolute -inset-2 rounded-[2rem] bg-white opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-80" aria-hidden="true" />
+                <div className="absolute -inset-0.5 rounded-[1.6rem] bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
 
-            return (
-              <div
-                key={idx}
-                className={`group relative bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${colorClasses.border}`}
-              >
-                <div className={`absolute -inset-0.5 bg-gradient-to-r ${colorClasses.gradient} rounded-2xl opacity-0 group-hover:opacity-20 blur transition-opacity`}></div>
+                <div className="relative z-10 overflow-hidden rounded-3xl bg-white dark:bg-black p-5 text-center shadow-lg border border-slate-200 dark:border-slate-700 transition-shadow duration-300 group-hover:shadow-2xl">
+                  <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50" style={{ backgroundImage: "url('/skill/skill.png')" }} aria-hidden="true" />
 
-                <div className="relative">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className={`p-3 rounded-lg bg-gradient-to-r ${colorClasses.gradient}`}>
-                      <Icon className="text-white" size={28} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                      {category.title}
-                    </h3>
-                  </div>
-
-                  <div className="space-y-4">
-                    {category.skills.map((skill, skillIdx) => (
-                      <div key={skillIdx} className="group/skill">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-semibold text-gray-700 dark:text-gray-300">
-                            {skill.name}
-                          </span>
-                          <span className={`text-sm font-bold ${colorClasses.text}`}>
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                          <div
-                            className={`h-full ${colorClasses.progress} rounded-full transition-all duration-1000 ease-out group-hover/skill:opacity-90`}
-                            style={{
-                              width: `${skill.level}%`,
-                              animation: `slideIn 1s ease-out ${skillIdx * 0.1}s both`,
-                            }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))}
+                  <div className="relative z-10 flex flex-col items-center justify-center gap-3">
+                    <img
+                      src={skill.src}
+                      alt={skill.alt}
+                      className={`h-14 w-14 object-contain filter grayscale brightness-150 contrast-125 ${skill.extraClass ?? ''}`}
+                    />
+                    <p className="text-sm font-bold text-gray-900 dark:text-white">{skill.name}</p>
                   </div>
                 </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,94 +1,100 @@
-import { Award, Cloud, Palette, Code, Shield, Medal } from 'lucide-react';
+import { useState } from 'react';
+import { BarChart3, Coffee, Monitor, Terminal } from 'lucide-react';
 
 export default function Certifications() {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('');
+
+  const openModal = (image: string) => {
+    setSelectedImage(image);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedImage('');
+  };
+
   const certifications = [
     {
-      title: 'Cloud Computing',
+      title: 'Joy of Computing Using Python',
       issuer: 'NPTEL',
-      description: 'Comprehensive certification in cloud computing concepts, architecture, and deployment models.',
-      icon: Cloud,
+      description: 'Built a strong foundation in Python programming through problem-solving, logic building, and computational thinking.',
+      icon: Terminal,
       color: 'blue',
+      image: '/Certifications/PYTHON NPTEL.jpeg',
     },
     {
-      title: 'UI/UX Design Certification',
+      title: 'Programming in Java',
+      issuer: 'NPTEL',
+      description: 'Learned object-oriented programming concepts, Java fundamentals, and application development using Java.',
+      icon: Coffee,
+      color: 'blue',
+      image: '/Certifications/Programming In Java.png',
+    },
+    {
+      title: 'Java Core for Beginners',
+      issuer: 'Udemy',
+      description: 'Gained hands-on experience with core Java concepts including classes, inheritance, collections, and exception handling.',
+      icon: Coffee,
+      color: 'blue',
+      image: '/Certifications/Udemy.png',
+    },
+    {
+      title: 'Web Development Intern',
       issuer: 'Codsoft',
-      description: 'Advanced training in user interface and user experience design principles and methodologies.',
-      icon: Palette,
+      description: 'Worked as a Web Development Intern, developing responsive web applications using HTML, CSS, JavaScript, and frontend-backend integration.',
+      icon: Monitor,
       color: 'cyan',
+      image: '/Certifications/CodSoft.png',
     },
     {
-      title: 'Full Stack Development Internship',
-      issuer: '8Queens Technologies',
-      description: 'Hands-on experience in full-stack web development including frontend and backend technologies.',
-      icon: Code,
+      title: 'Data Analytics and Data Science Internship',
+      issuer: 'InternPe',
+      description: 'Hands-on experience gaining hands-on experience in data preprocessing, visualization, and model building using Java and Excel.',
+      icon: BarChart3,
       color: 'teal',
+      image: '/Certifications/Mithun kumar N - Data analyst & science .png',
     },
-    {
-      title: 'NCC B & C Certificates',
-      issuer: 'NCC',
-      description: 'National Cadet Corps B and C certificates demonstrating leadership and discipline.',
-      icon: Shield,
-      color: 'green',
-    },
-    {
-      title: '  Artificial Intelligence Fundamentals',
-      issuer: 'IBM',
-      description: 'IBM Bootcamp Certified in Artificial Intelligence Fundamentals, with hands-on learning in AI concepts, models, and real-world applications.',
-      icon: Medal,
-      color: 'blue',
-    },
-    {
-      title: ' Skills Build - Customer Engagement: Communication and Personality Dynamics',
-      issuer: 'IBM',
-      description: 'Completed IBM SkillsBuild certification in Customer Engagement, focusing on effective communication and personality dynamics.',
-      icon: Medal,
-      color: 'teal',
-    },
-    {
-      title: 'Skills Build - Customer Engagement: Problem Solving and Process Controls',
-      issuer: 'IBM',
-      description: 'Completed IBM SkillsBuild certification in Customer Engagement, focusing on problem-solving techniques and process control principles.',
-      icon: Medal,
-      color: 'cyan',
-    },
+
   ];
 
   const getColorClasses = (color: string) => {
     const colors = {
       blue: {
-        gradient: 'from-blue-600 to-blue-400',
-        bg: 'bg-blue-50 dark:bg-blue-900/20',
-        text: 'text-blue-600',
+        gradient: 'from-slate-900 to-slate-700',
+        bg: 'bg-slate-100 dark:bg-slate-900/20',
+        text: 'text-slate-900',
       },
       cyan: {
-        gradient: 'from-cyan-600 to-cyan-400',
-        bg: 'bg-cyan-50 dark:bg-cyan-900/20',
-        text: 'text-cyan-600',
+        gradient: 'from-slate-900 to-slate-700',
+        bg: 'bg-slate-100 dark:bg-slate-900/20',
+        text: 'text-slate-900',
       },
       teal: {
-        gradient: 'from-teal-600 to-teal-400',
-        bg: 'bg-teal-50 dark:bg-teal-900/20',
-        text: 'text-teal-600',
+        gradient: 'from-slate-900 to-slate-700',
+        bg: 'bg-slate-100 dark:bg-slate-900/20',
+        text: 'text-slate-900',
       },
       green: {
-        gradient: 'from-green-600 to-green-400',
-        bg: 'bg-green-50 dark:bg-green-900/20',
-        text: 'text-green-600',
+        gradient: 'from-slate-900 to-slate-700',
+        bg: 'bg-slate-100 dark:bg-slate-900/20',
+        text: 'text-slate-900',
       },
     };
     return colors[color as keyof typeof colors];
-  };
+  }
 
   return (
-    <section id="certifications" className="py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="certifications" className="py-20 bg-white dark:bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Certifications & Achievements
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-black mx-auto rounded-full"></div>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Professional certifications and recognitions
+            Recognized certifications and achievements that strengthen my technical expertise.
           </p>
         </div>
 
@@ -100,45 +106,88 @@ export default function Certifications() {
             return (
               <div
                 key={idx}
-                className="group relative bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-200 dark:border-gray-700 hover:border-transparent overflow-hidden"
+                onClick={() => openModal(cert.image)}
+                className="group relative w-full h-[250px] rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-white/40 transition-all duration-300 border-2 border-gray-200 dark:border-gray-700 hover:border-white hover:ring-2 hover:ring-white hover:-translate-y-1 overflow-hidden cursor-pointer bg-cover bg-center bg-no-repeat"
+                style={{backgroundImage: "url('/Certifications/cert.png')", backgroundPosition: "center", backgroundRepeat: "no-repeat"}}
               >
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${colorClasses.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                  className={`absolute inset-0 bg-gradient-to-br ${colorClasses.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
                 ></div>
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_35%,rgba(0,0,0,0.95)_100%)]" />
 
-                <div className="relative">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div
-                      className={`p-4 rounded-xl bg-gradient-to-br ${colorClasses.gradient} transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
-                    >
-                      <Icon className="text-white" size={28} />
+                <div className="absolute left-4 bottom-4">
+                  <div className="transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-4 max-w-[60%]">
+                    <div className="rounded-3xl bg-black/30 p-4 backdrop-blur-sm">
+                      <div className="flex flex-col items-start gap-3">
+                        <div
+                          className={`p-3 rounded-full bg-gradient-to-br ${colorClasses.gradient} transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
+                        >
+                          <Icon className="text-white" size={24} />
+                        </div>
+                        <div className="flex flex-col items-start gap-1">
+                          <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight tracking-tight">
+                            {cert.title}
+                          </h3>
+                          <p className="text-sm font-bold text-slate-100">
+                            {cert.issuer}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-blue-600 group-hover:to-cyan-600 transition-all duration-300">
-                        {cert.title}
-                      </h3>
-                      <p className={`text-sm font-semibold ${colorClasses.text}`}>
-                        {cert.issuer}
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {cert.description}
-                  </p>
-
-                  <div className="mt-6 flex items-center gap-2">
-                    <Award className={colorClasses.text} size={20} />
-                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                      Verified Certification
-                    </span>
                   </div>
                 </div>
-              </div>
+
+                <div className="absolute bottom-6 right-6">
+                  <div className="opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 max-w-[calc(100%-3rem)]">
+                    <div className="rounded-3xl bg-white/95 dark:bg-white/95 p-5 shadow-xl shadow-white/20 backdrop-blur-sm border border-white/80 group-hover:shadow-2xl group-hover:shadow-white/40 transition-all duration-300">
+                      <p className="text-center text-gray-900 leading-relaxed font-semibold">
+                        {cert.description}
+                      </p>
+
+                      <div className="mt-5 flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-2">
+                          <Icon className={colorClasses.text} size={18} />
+                          <span className="text-sm font-semibold text-gray-700">
+                            Verified Certification
+                          </span>
+                        </div>
+                          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-slate-900 to-slate-700 text-white text-sm font-bold shadow-lg hover:bg-white group-hover:bg-white group-hover:text-gray-950 group-hover:ring-2 group-hover:ring-white transition-all duration-200">
+                          View
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
             );
           })}
         </div>
       </div>
+
+      {showModal && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-2xl w-full shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedImage}
+              alt="Certificate"
+              className="w-full h-auto rounded-lg"
+            />
+            <button
+              onClick={closeModal}
+              className="mt-6 w-full bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold py-3 rounded-lg hover:bg-white dark:hover:bg-white hover:text-gray-950 hover:shadow-2xl hover:shadow-white/40 hover:ring-2 hover:ring-white transition-all duration-200"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

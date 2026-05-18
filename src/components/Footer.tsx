@@ -1,30 +1,24 @@
-import { Heart } from 'lucide-react';
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+    <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
-            <p className="text-gray-600 dark:text-gray-400 flex items-center gap-2 justify-center md:justify-start">
-              Made with <Heart className="text-red-500" size={16} fill="currentColor" /> by{' '}
-              <span className="font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                Premkumar E
-              </span>
+            <p className="text-slate-600 dark:text-slate-400 flex items-center gap-2 justify-center md:justify-start">
             </p>
-            <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
+            <p className="text-sm text-slate-500 dark:text-slate-500 mt-1">
               &copy; {currentYear} All rights reserved.
             </p>
           </div>
 
           <div className="flex items-center gap-6">
             <a
-              href="https://www.linkedin.com/in/prem-kumar-023944295"
+              href="https://www.linkedin.com/in/mithunkumar3112/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all"
+              className="text-gray-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-slate-100 transform hover:scale-110 transition-all"
               aria-label="LinkedIn"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -32,24 +26,43 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://fusionmax.vercel.app/"
+              href="https://github.com/mithunkumar3112"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all"
-              aria-label="Portfolio"
+              className="text-gray-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-slate-100 transform hover:scale-110 transition-all"
+              aria-label="GitHub"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
+              <span
+                className="block w-6 h-6 bg-current"
+                style={{
+                  WebkitMask: "url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg') center / contain no-repeat",
+                  mask: "url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg') center / contain no-repeat",
+                }}
+              />
             </a>
             <a
-              href="mailto:prem2907nirmala@gmail.com"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all"
+              href="mailto:itsmithunkumar31@gmail.com"
+              className="text-gray-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-slate-100 transform hover:scale-110 transition-all"
               aria-label="Email"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
+            </a>
+            <a
+              href="https://leetcode.com/u/MithunKumar3112/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-slate-100 transform hover:scale-110 transition-all"
+              aria-label="LeetCode"
+            >
+              <span
+                className="block w-6 h-6 bg-current"
+                style={{
+                  WebkitMask: "url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/leetcode.svg') center / contain no-repeat",
+                  mask: "url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/leetcode.svg') center / contain no-repeat",
+                }}
+              />
             </a>
           </div>
         </div>

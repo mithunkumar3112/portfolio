@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Mail, Phone, Send, Linkedin, Globe, CheckCircle } from 'lucide-react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 
 export default function Contact() {
@@ -54,64 +54,71 @@ export default function Contact() {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91-8807127189',
-      href: 'tel:+918807127189',
+      value: '+91-8148733855',
+      href: 'tel:+918148733855',
       color: 'blue',
     },
     {
       icon: Mail,
       label: 'Email',
-      value: 'prem2907nirmala@gmail.com',
-      href: 'https://mail.google.com/mail/?view=cm&fs=1&to=prem2907nirmala@gmail.com',
+      value: 'itsmithunkumar31@gmail.com.com',
+      href: 'https://mail.google.com/mail/?view=cm&fs=1&to=itsmithunkumar31@gmail.com.com',
       color: 'cyan',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'Connect with me',
-      href: 'https://www.linkedin.com/in/prem-kumar-023944295',
+      value: 'Connect ',
+      href: 'https://www.linkedin.com/in/mithunkumar3112/',
       color: 'teal',
     },
     {
       icon: Globe,
-      label: 'Portfolio',
-      value: 'fusionmax.vercel.app',
-      href: 'https://fusionmax.vercel.app/',
+      label: 'Github',
+      value: 'My work',
+      href: 'https://github.com/mithunkumar3112',
       color: 'green',
     },
   ];
 
   const getColorClasses = (color: string) => {
     const colors = {
-      blue: 'from-blue-600 to-blue-400',
-      cyan: 'from-cyan-600 to-cyan-400',
-      teal: 'from-teal-600 to-teal-400',
-      green: 'from-green-600 to-green-400',
+      blue: 'from-slate-900 to-slate-700',
+      cyan: 'from-slate-900 to-slate-700',
+      teal: 'from-slate-900 to-slate-700',
+      green: 'from-slate-900 to-slate-700',
     };
     return colors[color as keyof typeof colors];
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="contact" className="py-20 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Get In Touch
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-black mx-auto rounded-full"></div>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Let's create something amazing together
+            Let’s connect and collaborate on exciting ideas, projects, and opportunities.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-6">
-            <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Contact Information
-              </h3>
+            <div className="relative overflow-hidden bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                style={{ backgroundImage: "url('/other/cc.jpg')" }}
+                aria-hidden="true"
+              />
+              <div className="absolute inset-0 bg-black/40 dark:bg-black/50" aria-hidden="true" />
+              <div className="relative">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  Contact Information
+                </h3>
 
-              <div className="space-y-4">
+                <div className="space-y-4">
                 {contactInfo.map((item, idx) => {
                   const Icon = item.icon;
                   const gradient = getColorClasses(item.color);
@@ -122,7 +129,7 @@ export default function Contact() {
                       href={item.href}
                       target={item.href.startsWith('http') ? '_blank' : undefined}
                       rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="group flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
+                      className="group flex items-start gap-4 p-4 rounded-xl hover:bg-white hover:shadow-2xl hover:shadow-white/30 hover:ring-2 hover:ring-white transition-all duration-300"
                     >
                       <div
                         className={`p-3 rounded-lg bg-gradient-to-br ${gradient} transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
@@ -130,24 +137,25 @@ export default function Contact() {
                         <Icon className="text-white" size={24} />
                       </div>
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                        <p className="text-sm text-slate-500 dark:text-slate-400 group-hover:text-slate-700 mb-1 transition-colors">
                           {item.label}
                         </p>
-                        <p className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        <p className="font-semibold text-gray-900 dark:text-white group-hover:text-slate-950 transition-colors">
                           {item.value}
                         </p>
                       </div>
                     </a>
                   );
                 })}
+                </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-8 text-white shadow-lg">
+            <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-black rounded-2xl p-8 text-white shadow-2xl shadow-black/20">
               <h3 className="text-2xl font-bold mb-4">Why Work With Me?</h3>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3">
-                  <CheckCircle size={20} />
+                  <CheckCircle className="text-white" size={20} />
                   <span>User-centered design approach</span>
                 </li>
                 <li className="flex items-center gap-3">
@@ -166,10 +174,17 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              Send Me a Message
-            </h3>
+          <div className="relative overflow-hidden bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+              style={{ backgroundImage: "url('/other/cc.jpg')" }}
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-black/40 dark:bg-black/50" aria-hidden="true" />
+            <div className="relative">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                Send Me a Message
+              </h3>
 
             {isSubmitted ? (
               <div className="text-center py-12">
@@ -199,8 +214,8 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-600 dark:focus:border-blue-600 focus:ring-0 transition-colors"
-                    placeholder="John Doe"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-black text-gray-900 dark:text-white focus:border-slate-900 dark:focus:border-slate-300 focus:ring-0 transition-colors"
+                    placeholder="Name"
                   />
                 </div>
 
@@ -211,16 +226,19 @@ export default function Contact() {
                   >
                     Email Address
                   </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-600 dark:focus:border-blue-600 focus:ring-0 transition-colors"
-                    placeholder="john@example.com"
-                  />
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 z-10 pointer-events-none" size={20} />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full pl-12 px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-slate-700 bg-white dark:bg-black text-gray-900 dark:text-white focus:border-slate-900 dark:focus:border-slate-300 focus:ring-0 transition-colors"
+                      placeholder="name@example.com"
+                    />
+                  </div>
                 </div>
 
                 <div>
@@ -237,7 +255,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-600 dark:focus:border-blue-600 focus:ring-0 transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-slate-700 bg-white dark:bg-black text-gray-900 dark:text-white focus:border-slate-900 dark:focus:border-slate-300 focus:ring-0 transition-colors"
                     placeholder="Project Inquiry"
                   />
                 </div>
@@ -256,7 +274,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-600 dark:focus:border-blue-600 focus:ring-0 transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-slate-700 bg-white dark:bg-black text-gray-900 dark:text-white focus:border-slate-900 dark:focus:border-slate-300 focus:ring-0 transition-colors resize-none"
                     placeholder="Tell me about your project..."
                   ></textarea>
                 </div>
@@ -264,7 +282,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full px-8 py-4 bg-black text-white rounded-lg font-semibold shadow-lg hover:bg-slate-900 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
                   {isSubmitting ? (
                     <>
@@ -283,6 +301,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+    </div>
     </section>
   );
 }

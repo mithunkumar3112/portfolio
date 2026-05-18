@@ -13,11 +13,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white dark:bg-black"
     >
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" style={{ backgroundImage: "url('/other/about.png')" }} aria-hidden="true" />
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-slate-300/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-slate-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -25,24 +26,23 @@ export default function Hero() {
           <div className="space-y-4">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white animate-slide-up">
               Hi, I'm{' '}
-              <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
-                Premkumar E
+              <span className="text-black dark:text-white">
+                Mithun Kumar N
               </span>
             </h1>
             <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 animate-slide-up delay-100">
-              UI/UX Designer | Frontend Developer
+              Software Engineer | Java Developer
             </p>
           </div>
 
           <p className="max-w-3xl mx-auto text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed animate-slide-up delay-200">
-            Creating intuitive, visually engaging, responsive digital experiences
-            with modern UI/UX and frontend technologies.
+            Passionate about creating interactive and responsive web applications with modern frontend and backend technologies.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up delay-300">
             <button
               onClick={scrollToProjects}
-              className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
+              className="group px-8 py-4 bg-black text-white rounded-full font-semibold shadow-lg hover:bg-white hover:text-gray-950 hover:shadow-2xl hover:shadow-white/40 hover:ring-2 hover:ring-white transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
             >
               <Briefcase size={20} />
               View Projects
@@ -54,9 +54,9 @@ export default function Hero() {
 
             {/* ✅ FIXED RESUME LINK */}
             <a
-              href="/projects/premkumar.pdf"
+              href="/projects/Mithun_Kumar_N_Resume.docx"
               download
-              className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 border-2 border-gray-200 dark:border-gray-700"
+              className="px-8 py-4 bg-white dark:bg-black text-gray-900 dark:text-white rounded-full font-semibold shadow-lg hover:bg-white dark:hover:bg-white hover:text-gray-950 dark:hover:text-gray-950 hover:shadow-2xl hover:shadow-white/40 hover:ring-2 hover:ring-white transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 border-2 border-gray-200 dark:border-gray-700 dark:hover:border-white"
             >
               <Download size={20} />
               Download Resume
@@ -65,10 +65,10 @@ export default function Hero() {
 
           <div className="flex items-center justify-center gap-6 pt-8 animate-slide-up delay-400">
             <a
-              href="https://www.linkedin.com/in/prem-kumar-023944295"
+              href="https://www.linkedin.com/in/mithunkumar3112/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all"
+              className="text-gray-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-slate-100 transform hover:scale-110 transition-all"
               aria-label="LinkedIn"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -77,25 +77,44 @@ export default function Hero() {
             </a>
 
             <a
-              href="https://fusionmax.vercel.app/"
+              href="https://github.com/mithunkumar3112"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all"
-              aria-label="Portfolio"
+              className="text-gray-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-slate-100 transform hover:scale-110 transition-all"
+              aria-label="GitHub"
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
+              <span
+                className="block w-8 h-8 bg-current"
+                style={{
+                  WebkitMask: "url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg') center / contain no-repeat",
+                  mask: "url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg') center / contain no-repeat",
+                }}
+              />
             </a>
 
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=prem2907nirmala@gmail.com"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=itsmithunkumar31@gmail.com"
+              className="text-gray-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-slate-100 transform hover:scale-110 transition-all"
               aria-label="Email"
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
+            </a>
+            <a
+              href="https://leetcode.com/u/MithunKumar3112/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-slate-100 transform hover:scale-110 transition-all"
+              aria-label="LeetCode"
+            >
+              <span
+                className="block w-8 h-8 bg-current"
+                style={{
+                  WebkitMask: "url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/leetcode.svg') center / contain no-repeat",
+                  mask: "url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/leetcode.svg') center / contain no-repeat",
+                }}
+              />
             </a>
           </div>
         </div>
