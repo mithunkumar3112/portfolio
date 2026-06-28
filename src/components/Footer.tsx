@@ -2,9 +2,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
+    <footer className="relative overflow-hidden bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(148,163,184,0.12),transparent_28rem)]" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="relative flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
             <p className="text-slate-600 dark:text-slate-400 flex items-center gap-2 justify-center md:justify-start">
             </p>

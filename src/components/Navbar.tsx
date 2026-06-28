@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
+const navItems = [
+  { id: 'home', label: 'HOME' },
+  { id: 'about', label: 'ABOUT' },
+  { id: 'skills', label: 'SKILLS' },
+  { id: 'projects', label: 'PROJECTS' },
+  { id: 'education', label: 'EDUCATION' },
+  { id: 'certifications', label: 'CERTIFICATIONS' },
+  { id: 'contact', label: 'CONTACT' },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const navItems = [
-    { id: 'home', label: 'HOME' },
-    { id: 'about', label: 'ABOUT' },
-    { id: 'skills', label: 'SKILLS' },
-    { id: 'projects', label: 'PROJECTS' },
-    { id: 'education', label: 'EDUCATION' },
-    { id: 'certifications', label: 'CERTIFICATIONS' },
-    { id: 'contact', label: 'CONTACT' },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +57,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-lg shadow-lg'
+          ? 'bg-white/80 dark:bg-[#07111f]/85 backdrop-blur-xl shadow-lg shadow-cyan-950/10 dark:shadow-cyan-300/5 border-b border-cyan-400/10 dark:border-cyan-300/10'
           : 'bg-transparent'
       }`}
     >
@@ -65,7 +65,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <button
             onClick={() => scrollToSection('home')}
-            className="text-2xl font-bold text-black dark:text-white"
+            className="brand-gradient-text text-2xl font-bold"
           >
             MITHUN KUMAR N
           </button>
@@ -99,7 +99,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
+        <div className="md:hidden bg-white/95 dark:bg-[#07111f]/95 backdrop-blur-xl border-t border-cyan-400/10 dark:border-cyan-300/10 animate-slide-up">
           <div className="px-4 py-4 space-y-2">
             {navItems.map((item) => (
               <button

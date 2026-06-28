@@ -3,16 +3,102 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --ink: #07111f;
+    --paper: #f8fbff;
+    --aqua: #14b8a6;
+    --mint: #38bdf8;
+    --coral: #f43f5e;
+    --gold: #f59e0b;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
     @apply bg-gray-900 text-white;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(20, 184, 166, 0.2), transparent 34rem),
+      radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.14), transparent 30rem),
+      #07111f;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--aqua);
+    color: var(--ink);
   }
 }
 
 @layer utilities {
+  @keyframes aurora {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    }
+    33% {
+      transform: translate3d(4%, -3%, 0) rotate(8deg) scale(1.08);
+    }
+    66% {
+      transform: translate3d(-3%, 4%, 0) rotate(-6deg) scale(0.96);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-16px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-120%) skewX(-18deg);
+    }
+    100% {
+      transform: translateX(220%) skewX(-18deg);
+    }
+  }
+
+  @keyframes gradient-pan {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes mesh-drift {
+    0%, 100% {
+      background-position: 0% 50%, 100% 50%, 50% 0%;
+      filter: hue-rotate(0deg);
+    }
+    50% {
+      background-position: 100% 50%, 0% 50%, 50% 100%;
+      filter: hue-rotate(12deg);
+    }
+  }
+
+  @keyframes border-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 rgba(20, 184, 166, 0);
+    }
+    50% {
+      box-shadow: 0 0 28px rgba(20, 184, 166, 0.28);
+    }
+  }
+
   @keyframes slideIn {
     from {
       width: 0;
@@ -59,6 +145,111 @@
     animation: slide-up 0.8s ease-out;
   }
 
+  .animate-aurora {
+    animation: aurora 14s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-gradient-pan {
+    animation: gradient-pan 7s ease infinite;
+    background-size: 220% 220%;
+  }
+
+  .shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 45%;
+    background: linear-gradient(90deg, transparent, rgba(153, 246, 228, 0.38), transparent);
+    transform: translateX(-120%) skewX(-18deg);
+  }
+
+  .shine:hover::after {
+    animation: shimmer 0.9s ease;
+  }
+
+  .section-rhythm {
+    @apply relative overflow-hidden py-20 bg-white dark:bg-black;
+  }
+
+  .section-rhythm::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(20, 184, 166, 0.13), transparent 22rem),
+      radial-gradient(circle at 88% 72%, rgba(245, 158, 11, 0.11), transparent 24rem),
+      radial-gradient(circle at 50% 95%, rgba(244, 63, 94, 0.08), transparent 20rem);
+    animation: mesh-drift 18s ease-in-out infinite;
+  }
+
+  .section-title-line {
+    @apply w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-teal-400 via-sky-400 to-amber-400;
+  }
+
+  .brand-gradient-text {
+    @apply bg-gradient-to-r from-teal-400 via-sky-400 to-amber-400 bg-clip-text text-transparent animate-gradient-pan;
+  }
+
+  .brand-surface {
+    @apply border border-teal-400/20 bg-white/85 shadow-2xl shadow-teal-950/10 backdrop-blur-xl dark:border-teal-300/15 dark:bg-slate-950/70 dark:shadow-teal-300/10;
+  }
+
+  .brand-button {
+    @apply bg-gradient-to-r from-teal-500 via-sky-400 to-amber-400 text-slate-950 shadow-lg shadow-teal-500/25 hover:shadow-2xl hover:shadow-sky-400/30 hover:ring-2 hover:ring-teal-200;
+  }
+
+  .brand-chip {
+    @apply border border-teal-400/25 bg-teal-50/80 text-slate-900 shadow-sm shadow-teal-900/5 backdrop-blur-md dark:border-teal-300/20 dark:bg-teal-300/10 dark:text-teal-50;
+  }
+
+  .animate-border-glow {
+    animation: border-glow 3.6s ease-in-out infinite;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0) scale(0.98);
+    transition:
+      opacity 0.75s ease,
+      transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-left {
+    transform: translate3d(-34px, 0, 0) scale(0.98);
+  }
+
+  .reveal-right {
+    transform: translate3d(34px, 0, 0) scale(0.98);
+  }
+
+  .reveal-none {
+    transform: none;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  .glass-panel {
+    @apply border border-teal-400/15 bg-white/80 shadow-2xl shadow-teal-950/10 backdrop-blur-xl dark:bg-white/5 dark:shadow-teal-300/10;
+  }
+
+  .magnetic-card {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/20 dark:hover:shadow-teal-300/20;
+  }
+
   .delay-100 {
     animation-delay: 0.1s;
   }
@@ -77,6 +268,24 @@
 
   .delay-1000 {
     animation-delay: 1s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    .reveal,
+    .reveal-left,
+    .reveal-right {
+      opacity: 1;
+      transform: none;
+    }
   }
   
 }

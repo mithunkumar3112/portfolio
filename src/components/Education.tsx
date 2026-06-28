@@ -1,4 +1,8 @@
+import Reveal from './Reveal';
+
 export default function Education() {
+  const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
   const education = [
     {
       degree: 'B.E Computer Science Engineering',
@@ -21,27 +25,29 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-20 bg-white dark:bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+    <section id="education" className="section-rhythm">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-950 dark:text-white mb-4">
             Education
           </h2>
-          <div className="w-20 h-1 bg-black mx-auto rounded-full"></div>
+          <div className="section-title-line"></div>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
            My academic journey, highlighting my learning, growth, and technical foundation.
           </p>
-        </div>
+        </Reveal>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-slate-700 via-slate-500 to-slate-700">
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 via-emerald-400 to-rose-400">
           </div>
           {education.map((item, idx) => {
             const isLeft = idx % 2 === 0;
 
             return (
-              <div
+              <Reveal
                 key={idx}
+                delay={idx * 110}
+                direction={isLeft ? 'left' : 'right'}
                 className={
                   'relative mb-12 ' + (isLeft ? 'md:pr-1/2' : 'md:pl-1/2 md:ml-auto') + ' md:w-1/2'
                 }
@@ -54,13 +60,13 @@ export default function Education() {
                   <div className="w-full">
                     <div
                       className={
-                        'group relative overflow-hidden bg-white dark:bg-black rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:shadow-white/40 transition-all duration-300 border-2 border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-white hover:border-white dark:hover:border-white hover:ring-2 hover:ring-white hover:-translate-y-1 ' +
+                        'shine group brand-surface relative overflow-hidden rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 hover:border-cyan-200 dark:hover:border-cyan-300/30 hover:ring-2 hover:ring-cyan-200 hover:-translate-y-1 ' +
                         (isLeft ? 'md:mr-16' : 'md:ml-16')
                       }
                     >
                       <div
                         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                        style={{ backgroundImage: "url('/education/edu.png')" }}
+                        style={{ backgroundImage: `url('${asset('education/edu.png')}')` }}
                         aria-hidden="true"
                       />
 
@@ -69,7 +75,7 @@ export default function Education() {
                           <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-white dark:group-hover:text-white">
                             {item.degree}
                           </h3>
-                          <span className="px-3 py-1 text-sm font-bold bg-gradient-to-r from-slate-700 to-slate-500 text-white rounded-full">
+                          <span className="px-3 py-1 text-sm font-bold bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 rounded-full">
                             {item.score}
                           </span>
                         </div>
@@ -83,7 +89,7 @@ export default function Education() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>

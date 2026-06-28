@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { BarChart3, Coffee, Monitor, Terminal } from 'lucide-react';
+import Reveal from './Reveal';
 
 export default function Certifications() {
+  const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
 
@@ -22,7 +25,7 @@ export default function Certifications() {
       description: 'Built a strong foundation in Python programming through problem-solving, logic building, and computational thinking.',
       icon: Terminal,
       color: 'blue',
-      image: '/Certifications/PYTHON NPTEL.jpeg',
+      image: asset('Certifications/PYTHON NPTEL.jpeg'),
     },
     {
       title: 'Programming in Java',
@@ -30,7 +33,7 @@ export default function Certifications() {
       description: 'Learned object-oriented programming concepts, Java fundamentals, and application development using Java.',
       icon: Coffee,
       color: 'blue',
-      image: '/Certifications/Programming In Java.png',
+      image: asset('Certifications/Programming In Java.png'),
     },
     {
       title: 'Java Core for Beginners',
@@ -38,7 +41,7 @@ export default function Certifications() {
       description: 'Gained hands-on experience with core Java concepts including classes, inheritance, collections, and exception handling.',
       icon: Coffee,
       color: 'blue',
-      image: '/Certifications/Udemy.png',
+      image: asset('Certifications/Udemy.png'),
     },
     {
       title: 'Web Development Intern',
@@ -46,7 +49,7 @@ export default function Certifications() {
       description: 'Worked as a Web Development Intern, developing responsive web applications using HTML, CSS, JavaScript, and frontend-backend integration.',
       icon: Monitor,
       color: 'cyan',
-      image: '/Certifications/CodSoft.png',
+      image: asset('Certifications/CodSoft.png'),
     },
     {
       title: 'Data Analytics and Data Science Internship',
@@ -54,7 +57,7 @@ export default function Certifications() {
       description: 'Hands-on experience gaining hands-on experience in data preprocessing, visualization, and model building using Java and Excel.',
       icon: BarChart3,
       color: 'teal',
-      image: '/Certifications/Mithun kumar N - Data analyst & science .png',
+      image: asset('Certifications/Mithun kumar N - Data analyst & science .png'),
     },
 
   ];
@@ -86,17 +89,17 @@ export default function Certifications() {
   }
 
   return (
-    <section id="certifications" className="py-20 bg-white dark:bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+    <section id="certifications" className="section-rhythm">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
+        <Reveal className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-950 dark:text-white mb-4">
             Certifications & Achievements
           </h2>
-          <div className="w-20 h-1 bg-black mx-auto rounded-full"></div>
+          <div className="section-title-line"></div>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Recognized certifications and achievements that strengthen my technical expertise.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 gap-8">
           {certifications.map((cert, idx) => {
@@ -104,11 +107,14 @@ export default function Certifications() {
             const colorClasses = getColorClasses(cert.color);
 
             return (
-              <div
+              <Reveal
                 key={idx}
+                delay={idx * 85}
+              >
+              <div
                 onClick={() => openModal(cert.image)}
-                className="group relative w-full h-[250px] rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-white/40 transition-all duration-300 border-2 border-gray-200 dark:border-gray-700 hover:border-white hover:ring-2 hover:ring-white hover:-translate-y-1 overflow-hidden cursor-pointer bg-cover bg-center bg-no-repeat"
-                style={{backgroundImage: "url('/Certifications/cert.png')", backgroundPosition: "center", backgroundRepeat: "no-repeat"}}
+                className="shine group relative w-full h-[250px] rounded-3xl shadow-lg shadow-cyan-950/10 hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500 border-2 border-cyan-100 dark:border-cyan-300/15 hover:border-cyan-200 hover:ring-2 hover:ring-cyan-200 hover:-translate-y-2 overflow-hidden cursor-pointer bg-cover bg-center bg-no-repeat"
+                style={{backgroundImage: `url('${asset('Certifications/cert.png')}')`, backgroundPosition: "center", backgroundRepeat: "no-repeat"}}
               >
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
                 <div
@@ -152,7 +158,7 @@ export default function Certifications() {
                             Verified Certification
                           </span>
                         </div>
-                          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-slate-900 to-slate-700 text-white text-sm font-bold shadow-lg hover:bg-white group-hover:bg-white group-hover:text-gray-950 group-hover:ring-2 group-hover:ring-white transition-all duration-200">
+                          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 text-sm font-bold shadow-lg group-hover:bg-cyan-300 group-hover:ring-2 group-hover:ring-cyan-200 transition-all duration-200">
                           View
                         </span>
                       </div>
@@ -160,6 +166,7 @@ export default function Certifications() {
                   </div>
                 </div>
           </div>
+              </Reveal>
             );
           })}
         </div>

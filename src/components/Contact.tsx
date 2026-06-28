@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Mail, Phone, Send, Linkedin, Globe, CheckCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import Reveal from './Reveal';
 
 
 export default function Contact() {
+  const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -92,24 +95,24 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+    <section id="contact" className="section-rhythm">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-950 dark:text-white mb-4">
             Get In Touch
           </h2>
-          <div className="w-20 h-1 bg-black mx-auto rounded-full"></div>
+          <div className="section-title-line"></div>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Let’s connect and collaborate on exciting ideas, projects, and opportunities.
+            Let's connect and collaborate on exciting ideas, projects, and opportunities.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <div className="relative overflow-hidden bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+          <Reveal direction="left" className="space-y-6">
+            <div className="shine magnetic-card brand-surface relative overflow-hidden rounded-2xl p-8 shadow-lg">
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-                style={{ backgroundImage: "url('/other/cc.jpg')" }}
+                style={{ backgroundImage: `url('${asset('other/cc.jpg')}')` }}
                 aria-hidden="true"
               />
               <div className="absolute inset-0 bg-black/40 dark:bg-black/50" aria-hidden="true" />
@@ -129,7 +132,7 @@ export default function Contact() {
                       href={item.href}
                       target={item.href.startsWith('http') ? '_blank' : undefined}
                       rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="group flex items-start gap-4 p-4 rounded-xl hover:bg-white hover:shadow-2xl hover:shadow-white/30 hover:ring-2 hover:ring-white transition-all duration-300"
+                      className="group flex items-start gap-4 p-4 rounded-xl hover:bg-cyan-50 dark:hover:bg-cyan-300/10 hover:shadow-2xl hover:shadow-cyan-400/20 hover:ring-2 hover:ring-cyan-200 transition-all duration-300 hover:-translate-y-1"
                     >
                       <div
                         className={`p-3 rounded-lg bg-gradient-to-br ${gradient} transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
@@ -151,7 +154,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-black rounded-2xl p-8 text-white shadow-2xl shadow-black/20">
+            <div className="shine magnetic-card bg-gradient-to-br from-cyan-950 via-slate-950 to-emerald-950 rounded-2xl p-8 text-white shadow-2xl shadow-cyan-950/20">
               <h3 className="text-2xl font-bold mb-4">Why Work With Me?</h3>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3">
@@ -172,12 +175,12 @@ export default function Contact() {
                 </li>
               </ul>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="relative overflow-hidden bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+          <Reveal direction="right" className="shine magnetic-card brand-surface relative overflow-hidden rounded-2xl p-8 shadow-lg">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-              style={{ backgroundImage: "url('/other/cc.jpg')" }}
+              style={{ backgroundImage: `url('${asset('other/cc.jpg')}')` }}
               aria-hidden="true"
             />
             <div className="absolute inset-0 bg-black/40 dark:bg-black/50" aria-hidden="true" />
@@ -214,7 +217,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-black text-gray-900 dark:text-white focus:border-slate-900 dark:focus:border-slate-300 focus:ring-0 transition-colors"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-cyan-100 dark:border-cyan-300/20 bg-white/90 dark:bg-slate-950/80 text-gray-900 dark:text-white focus:border-cyan-400 dark:focus:border-cyan-300 focus:ring-0 transition-colors"
                     placeholder="Name"
                   />
                 </div>
@@ -235,7 +238,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full pl-12 px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-slate-700 bg-white dark:bg-black text-gray-900 dark:text-white focus:border-slate-900 dark:focus:border-slate-300 focus:ring-0 transition-colors"
+                      className="w-full pl-12 px-4 py-3 rounded-lg border-2 border-cyan-100 dark:border-cyan-300/20 bg-white/90 dark:bg-slate-950/80 text-gray-900 dark:text-white focus:border-cyan-400 dark:focus:border-cyan-300 focus:ring-0 transition-colors"
                       placeholder="name@example.com"
                     />
                   </div>
@@ -255,7 +258,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-slate-700 bg-white dark:bg-black text-gray-900 dark:text-white focus:border-slate-900 dark:focus:border-slate-300 focus:ring-0 transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border-2 border-cyan-100 dark:border-cyan-300/20 bg-white/90 dark:bg-slate-950/80 text-gray-900 dark:text-white focus:border-cyan-400 dark:focus:border-cyan-300 focus:ring-0 transition-colors"
                     placeholder="Project Inquiry"
                   />
                 </div>
@@ -274,7 +277,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-slate-700 bg-white dark:bg-black text-gray-900 dark:text-white focus:border-slate-900 dark:focus:border-slate-300 focus:ring-0 transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-lg border-2 border-cyan-100 dark:border-cyan-300/20 bg-white/90 dark:bg-slate-950/80 text-gray-900 dark:text-white focus:border-cyan-400 dark:focus:border-cyan-300 focus:ring-0 transition-colors resize-none"
                     placeholder="Tell me about your project..."
                   ></textarea>
                 </div>
@@ -282,7 +285,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                    className="w-full px-8 py-4 bg-black text-white rounded-lg font-semibold shadow-lg hover:bg-slate-900 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  className="shine w-full px-8 py-4 bg-white/90 dark:bg-slate-950/80 text-slate-950 dark:text-white rounded-full font-semibold shadow-lg shadow-cyan-950/10 hover:bg-cyan-50 dark:hover:bg-cyan-300 hover:text-slate-950 hover:shadow-2xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-200 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 border-2 border-cyan-100 dark:border-cyan-300/20 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
                   {isSubmitting ? (
                     <>
@@ -298,10 +301,10 @@ export default function Contact() {
                 </button>
               </form>
             )}
-          </div>
+            </div>
+          </Reveal>
         </div>
       </div>
-    </div>
     </section>
   );
 }
