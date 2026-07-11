@@ -22,10 +22,10 @@ export default function Skills() {
     <section id="skills" className="section-rhythm">
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-3 lg:px-8">
         <Reveal className="text-center mb-16">
-          <h4 className="brand-gradient-text text-3xl font-bold">SKILLS</h4>
+          <h2 className="brand-gradient-text text-4xl sm:text-5xl font-bold">Skills</h2>
           <div className="section-title-line"></div>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A showcase of my work, featuring real-world applications and innovative solutions.
+            A showcase of my technical proficiencies and tools I work with.
           </p>
         </Reveal>
 
@@ -36,8 +36,9 @@ export default function Skills() {
                 <div className="absolute -inset-2 rounded-[2rem] bg-white opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-80" aria-hidden="true" />
                 <div className="absolute -inset-0.5 rounded-[1.6rem] bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
 
-                <div className="shine brand-surface relative z-10 overflow-hidden rounded-3xl p-5 text-center transition-all duration-300 group-hover:shadow-2xl group-hover:scale-[1.03]">
-                  <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50" style={{ backgroundImage: `url('${asset('skill/skill.png')}')` }} aria-hidden="true" />
+                <article className="shine brand-surface relative z-10 overflow-hidden rounded-3xl p-5 text-center transition-all duration-300 group-hover:shadow-2xl group-hover:scale-[1.03]">
+                  <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80" style={{ backgroundImage: `url('${asset('skill/skill.avif')}')` }} aria-hidden="true" />
+                  <div className="absolute inset-0 bg-white/50 dark:bg-slate-950/40" aria-hidden="true" />
 
                   <div className="relative z-10 flex flex-col items-center justify-center gap-3">
                     <img
@@ -47,7 +48,7 @@ export default function Skills() {
                     />
                     <p className="text-sm font-bold text-gray-900 dark:text-white">{skill.name}</p>
                   </div>
-                </div>
+                </article>
               </Reveal>
             ))}
           </div>
