@@ -19,8 +19,8 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#f8fbff] dark:bg-[#07111f]"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 scale-105"
-        style={{ backgroundImage: `url('${asset('other/about.png')}')` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 scale-105"
+        style={{ backgroundImage: `url('${asset('other/about.avif')}')` }}
         aria-hidden="true"
       />
       <div

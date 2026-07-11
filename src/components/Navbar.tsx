@@ -60,17 +60,19 @@ export default function Navbar() {
           ? 'bg-white/80 dark:bg-[#07111f]/85 backdrop-blur-xl shadow-lg shadow-cyan-950/10 dark:shadow-cyan-300/5 border-b border-cyan-400/10 dark:border-cyan-300/10'
           : 'bg-transparent'
       }`}
+      aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <button
             onClick={() => scrollToSection('home')}
             className="brand-gradient-text text-2xl font-bold"
+            aria-label="Mithun Kumar N - Portfolio Home"
           >
             MITHUN KUMAR N
           </button>
 
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-1" role="menubar">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -80,6 +82,8 @@ export default function Navbar() {
                     ? activeNavClass
                     : getNavHoverClass(item.id)
                 }`}
+                role="menuitem"
+                aria-current={activeSection === item.id ? 'page' : undefined}
               >
                 {item.label}
               </button>
@@ -90,7 +94,8 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300"
-              aria-label="Toggle menu"
+              aria-label="Toggle navigation menu"
+              aria-expanded={isOpen}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -99,7 +104,11 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white/95 dark:bg-[#07111f]/95 backdrop-blur-xl border-t border-cyan-400/10 dark:border-cyan-300/10 animate-slide-up">
+        <div 
+          className="md:hidden bg-white/95 dark:bg-[#07111f]/95 backdrop-blur-xl border-t border-cyan-400/10 dark:border-cyan-300/10 animate-slide-up"
+          role="menu"
+          aria-label="Mobile navigation menu"
+        >
           <div className="px-4 py-4 space-y-2">
             {navItems.map((item) => (
               <button
@@ -110,6 +119,8 @@ export default function Navbar() {
                     ? activeNavClass
                     : getNavHoverClass(item.id)
                 }`}
+                role="menuitem"
+                aria-current={activeSection === item.id ? 'page' : undefined}
               >
                 {item.label}
               </button>

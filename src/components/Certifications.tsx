@@ -25,7 +25,7 @@ export default function Certifications() {
       description: 'Built a strong foundation in Python programming through problem-solving, logic building, and computational thinking.',
       icon: Terminal,
       color: 'blue',
-      image: asset('Certifications/PYTHON NPTEL.jpeg'),
+      image: asset('Certifications/PYTHON NPTEL.avif'),
     },
     {
       title: 'Programming in Java',
@@ -33,7 +33,7 @@ export default function Certifications() {
       description: 'Learned object-oriented programming concepts, Java fundamentals, and application development using Java.',
       icon: Coffee,
       color: 'blue',
-      image: asset('Certifications/Programming In Java.png'),
+      image: asset('Certifications/Programming In Java.avif'),
     },
     {
       title: 'Java Core for Beginners',
@@ -41,7 +41,7 @@ export default function Certifications() {
       description: 'Gained hands-on experience with core Java concepts including classes, inheritance, collections, and exception handling.',
       icon: Coffee,
       color: 'blue',
-      image: asset('Certifications/Udemy.png'),
+      image: asset('Certifications/Udemy.avif'),
     },
     {
       title: 'Web Development Intern',
@@ -49,7 +49,7 @@ export default function Certifications() {
       description: 'Worked as a Web Development Intern, developing responsive web applications using HTML, CSS, JavaScript, and frontend-backend integration.',
       icon: Monitor,
       color: 'cyan',
-      image: asset('Certifications/CodSoft.png'),
+      image: asset('Certifications/CodSoft.avif'),
     },
     {
       title: 'Data Analytics and Data Science Internship',
@@ -57,7 +57,7 @@ export default function Certifications() {
       description: 'Hands-on experience gaining hands-on experience in data preprocessing, visualization, and model building using Java and Excel.',
       icon: BarChart3,
       color: 'teal',
-      image: asset('Certifications/Mithun kumar N - Data analyst & science .png'),
+      image: asset('Certifications/Mithun kumar N - Data analyst & science .avif'),
     },
 
   ];
@@ -111,10 +111,18 @@ export default function Certifications() {
                 key={idx}
                 delay={idx * 85}
               >
-              <div
+              <article
                 onClick={() => openModal(cert.image)}
                 className="shine group relative w-full h-[250px] rounded-3xl shadow-lg shadow-cyan-950/10 hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500 border-2 border-cyan-100 dark:border-cyan-300/15 hover:border-cyan-200 hover:ring-2 hover:ring-cyan-200 hover:-translate-y-2 overflow-hidden cursor-pointer bg-cover bg-center bg-no-repeat"
-                style={{backgroundImage: `url('${asset('Certifications/cert.png')}')`, backgroundPosition: "center", backgroundRepeat: "no-repeat"}}
+                style={{backgroundImage: `url('${asset('Certifications/cert.avif')}')`, backgroundPosition: "center", backgroundRepeat: "no-repeat"}}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    openModal(cert.image);
+                  }
+                }}
+                aria-label={`View ${cert.title} certification`}
               >
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
                 <div
@@ -165,7 +173,7 @@ export default function Certifications() {
                     </div>
                   </div>
                 </div>
-          </div>
+              </article>
               </Reveal>
             );
           })}

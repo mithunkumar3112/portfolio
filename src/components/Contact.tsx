@@ -112,7 +112,7 @@ export default function Contact() {
             <div className="shine magnetic-card brand-surface relative overflow-hidden rounded-2xl p-8 shadow-lg">
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-                style={{ backgroundImage: `url('${asset('other/cc.jpg')}')` }}
+                style={{ backgroundImage: `url('${asset('other/cc.avif')}')` }}
                 aria-hidden="true"
               />
               <div className="absolute inset-0 bg-black/40 dark:bg-black/50" aria-hidden="true" />
@@ -180,7 +180,7 @@ export default function Contact() {
           <Reveal direction="right" className="shine magnetic-card brand-surface relative overflow-hidden rounded-2xl p-8 shadow-lg">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-              style={{ backgroundImage: `url('${asset('other/cc.jpg')}')` }}
+              style={{ backgroundImage: `url('${asset('other/cc.avif')}')` }}
               aria-hidden="true"
             />
             <div className="absolute inset-0 bg-black/40 dark:bg-black/50" aria-hidden="true" />

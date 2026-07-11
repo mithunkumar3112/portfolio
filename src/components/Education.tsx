@@ -57,7 +57,7 @@ export default function Education() {
                     'flex items-start gap-6 md:gap-8 ' + (isLeft ? 'md:flex-row' : 'md:flex-row-reverse')
                   }
                 >
-                  <div className="w-full">
+                  <article className="w-full">
                     <div
                       className={
                         'shine group brand-surface relative overflow-hidden rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 hover:border-cyan-200 dark:hover:border-cyan-300/30 hover:ring-2 hover:ring-cyan-200 hover:-translate-y-1 ' +
@@ -66,7 +66,7 @@ export default function Education() {
                     >
                       <div
                         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                        style={{ backgroundImage: `url('${asset('education/edu.png')}')` }}
+                        style={{ backgroundImage: `url('${asset('education/edu.avif')}')` }}
                         aria-hidden="true"
                       />
 
@@ -75,19 +75,19 @@ export default function Education() {
                           <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-white dark:group-hover:text-white">
                             {item.degree}
                           </h3>
-                          <span className="px-3 py-1 text-sm font-bold bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 rounded-full">
+                          <span className="px-3 py-1 text-sm font-bold bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 rounded-full" aria-label={`Score: ${item.score}`}>
                             {item.score}
                           </span>
                         </div>
                         <p className="text-gray-600 dark:text-slate-200 group-hover:text-slate-100 mb-2 font-bold transition-colors">
                           {item.institution}
                         </p>
-                        <p className="text-gray-500 dark:text-gray-500 group-hover:text-gray-700 text-sm transition-colors">
+                        <time className="text-gray-500 dark:text-gray-500 group-hover:text-gray-700 text-sm transition-colors">
                           {item.year}
-                        </p>
+                        </time>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </div>
               </Reveal>
             );
