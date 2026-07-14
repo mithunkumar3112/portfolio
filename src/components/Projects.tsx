@@ -101,12 +101,18 @@ export default function Projects() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => {
-            const bgImage = project.cover || project.mediaBlocks?.[0]?.image || asset('projects/projects.avif');
+            const bgImage = project.cover || project.mediaBlocks?.[0]?.image || '';
 
             return (
               <Reveal key={idx} delay={idx * 80}>
                 <article className="shine group relative w-full h-[240px] overflow-hidden rounded-2xl bg-slate-950 cursor-pointer shadow-lg shadow-cyan-950/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/25 hover:ring-2 hover:ring-cyan-200">
-                <img src={bgImage} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" />
+                <img
+                  src={bgImage}
+                  alt={`${project.title} project preview`}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
+                />
 
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/25 transition duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70" />

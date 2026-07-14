@@ -7,15 +7,18 @@ export default function Certifications() {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
+  const [selectedTitle, setSelectedTitle] = useState('Certification');
 
-  const openModal = (image: string) => {
+  const openModal = (image: string, title: string) => {
     setSelectedImage(image);
+    setSelectedTitle(title);
     setShowModal(true);
   };
 
   const closeModal = () => {
     setShowModal(false);
     setSelectedImage('');
+    setSelectedTitle('Certification');
   };
 
   const certifications = [
@@ -111,17 +114,11 @@ export default function Certifications() {
                 key={idx}
                 delay={idx * 85}
               >
-              <article
-                onClick={() => openModal(cert.image)}
-                className="shine group relative w-full h-[250px] rounded-3xl shadow-lg shadow-cyan-950/10 hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500 border-2 border-cyan-100 dark:border-cyan-300/15 hover:border-cyan-200 hover:ring-2 hover:ring-cyan-200 hover:-translate-y-2 overflow-hidden cursor-pointer bg-cover bg-center bg-no-repeat"
+              <button
+                type="button"
+                onClick={() => openModal(cert.image, cert.title)}
+                className="shine group relative w-full h-[250px] rounded-3xl shadow-lg shadow-cyan-950/10 hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500 border-2 border-cyan-100 dark:border-cyan-300/15 hover:border-cyan-200 hover:ring-2 hover:ring-cyan-200 hover:-translate-y-2 overflow-hidden cursor-pointer bg-cover bg-center bg-no-repeat text-left appearance-none"
                 style={{backgroundImage: `url('${asset('Certifications/cert.avif')}')`, backgroundPosition: "center", backgroundRepeat: "no-repeat"}}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    openModal(cert.image);
-                  }
-                }}
                 aria-label={`View ${cert.title} certification`}
               >
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
@@ -173,7 +170,7 @@ export default function Certifications() {
                     </div>
                   </div>
                 </div>
-              </article>
+              </button>
               </Reveal>
             );
           })}
@@ -191,7 +188,9 @@ export default function Certifications() {
           >
             <img
               src={selectedImage}
-              alt="Certificate"
+              alt={`${selectedTitle} certificate preview`}
+              loading="eager"
+              decoding="async"
               className="w-full h-auto rounded-lg"
             />
             <button

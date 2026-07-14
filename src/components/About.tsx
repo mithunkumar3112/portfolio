@@ -22,12 +22,19 @@ export default function About() {
             <article className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500 via-sky-400 to-lime-400 rounded-2xl opacity-20 blur-xl transition-all duration-500 group-hover:-inset-5 group-hover:opacity-55"></div>
               <div className="shine magnetic-card brand-surface relative overflow-hidden rounded-2xl border-2 border-sky-100 p-8 transition-all duration-500 group-hover:border-sky-300 group-hover:shadow-2xl group-hover:shadow-sky-500/20 dark:border-sky-300/20 dark:group-hover:border-sky-300/50">
-                <div className="absolute inset-0 bg-cover bg-center opacity-50 transition-all duration-700 group-hover:scale-110 group-hover:opacity-65" style={{ backgroundImage: `url('${asset('other/aa.jpg')}')` }} aria-hidden="true" />
+                <img
+                  src={asset('other/about-bg.avif')}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover opacity-50 transition-all duration-700 group-hover:scale-110 group-hover:opacity-65"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-sky-50/60 to-lime-50/50 transition-opacity duration-500 group-hover:opacity-90 dark:from-slate-950/85 dark:via-indigo-950/40 dark:to-sky-950/35" aria-hidden="true" />
                 <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-500 via-sky-400 to-lime-400 opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true" />
                 <div className="relative">
                   <User className="mb-4 text-sky-600 transition-all duration-500 group-hover:-translate-y-1 group-hover:scale-110 group-hover:text-indigo-600 dark:text-sky-300 dark:group-hover:text-lime-200" size={40} />
-                  <h3 className="text-2xl font-bold text-slate-950 transition-colors duration-300 group-hover:text-indigo-700 dark:text-white dark:group-hover:text-sky-100 mb-4">
+                  <h3 className="text-2xl font-bold text-slate-950 transition-colors duration-300 group-hover:text-indigo-70  dark:text-white dark:group-hover:text-sky-100 mb-4">
                     Hello! I'm Mithun Kumar N
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -43,7 +50,14 @@ export default function About() {
             <article className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-lime-400 via-amber-300 to-rose-500 rounded-2xl opacity-20 blur-xl transition-all duration-500 group-hover:-inset-5 group-hover:opacity-55"></div>
               <div className="shine magnetic-card brand-surface relative overflow-hidden rounded-2xl border-2 border-rose-100 p-8 transition-all duration-500 group-hover:border-rose-300 group-hover:shadow-2xl group-hover:shadow-rose-500/20 dark:border-rose-300/20 dark:group-hover:border-rose-300/50">
-                <div className="absolute inset-0 bg-cover bg-center opacity-50 transition-all duration-700 group-hover:scale-110 group-hover:opacity-65" style={{ backgroundImage: `url('${asset('other/aa.avif')}')` }} aria-hidden="true" />
+                <img
+                  src={asset('other/about-bg.avif')}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover opacity-50 transition-all duration-700 group-hover:scale-110 group-hover:opacity-65"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-rose-50/55 to-amber-50/50 transition-opacity duration-500 group-hover:opacity-90 dark:from-slate-950/85 dark:via-rose-950/35 dark:to-amber-950/30" aria-hidden="true" />
                 <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-lime-400 via-amber-300 to-rose-500 opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true" />
                 <div className="relative">
@@ -64,7 +78,14 @@ export default function About() {
 
           <Reveal direction="right" className="space-y-6">
             <article className="group shine magnetic-card brand-surface relative overflow-hidden rounded-2xl border border-indigo-200/80 p-8 shadow-xl transition-all duration-500 hover:border-indigo-300 hover:shadow-2xl hover:shadow-indigo-500/20 dark:border-indigo-300/20 dark:hover:border-indigo-300/50">
-              <div className="absolute inset-0 bg-cover bg-center opacity-50 filter grayscale transition-all duration-700 group-hover:scale-110 group-hover:opacity-65 group-hover:grayscale-0" style={{ backgroundImage: `url('${asset('other/aa.avif')}')` }} aria-hidden="true" />
+              <img
+                src={asset('other/about-bg.avif')}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover opacity-50 grayscale transition-all duration-700 group-hover:scale-110 group-hover:opacity-65 group-hover:grayscale-0"
+              />
               <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-indigo-50/60 to-sky-50/50 transition-opacity duration-500 group-hover:opacity-90 dark:from-slate-950/85 dark:via-indigo-950/40 dark:to-sky-950/35" aria-hidden="true" />
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-500 to-sky-400 opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true" />
               <div className="relative flex items-start gap-4 mb-6">
@@ -85,7 +106,14 @@ export default function About() {
             </article>
 
             <article className="group shine magnetic-card brand-surface relative overflow-hidden rounded-2xl border border-lime-200/80 p-8 shadow-xl transition-all duration-500 hover:border-lime-300 hover:shadow-2xl hover:shadow-lime-500/20 dark:border-lime-300/20 dark:hover:border-lime-300/50">
-              <div className="absolute inset-0 bg-cover bg-center opacity-50 filter grayscale transition-all duration-700 group-hover:scale-110 group-hover:opacity-65 group-hover:grayscale-0" style={{ backgroundImage: `url('${asset('other/aa.avif')}')` }} aria-hidden="true" />
+              <img
+                src={asset('other/about-bg.avif')}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover opacity-50 grayscale transition-all duration-700 group-hover:scale-110 group-hover:opacity-65 group-hover:grayscale-0"
+              />
               <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-lime-50/55 to-rose-50/45 transition-opacity duration-500 group-hover:opacity-90 dark:from-slate-950/85 dark:via-lime-950/25 dark:to-rose-950/35" aria-hidden="true" />
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-lime-300 to-rose-400 opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true" />
               <div className="relative flex items-start gap-4 mb-6">
@@ -107,7 +135,14 @@ export default function About() {
 
             <div className="grid grid-cols-2 gap-4">
               <article className="group magnetic-card brand-surface relative overflow-hidden rounded-xl border border-sky-200/80 p-6 text-center shadow-lg transition-all duration-500 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/20 dark:border-sky-300/20">
-                <div className="absolute inset-0 bg-cover bg-center opacity-50 filter grayscale transition-all duration-700 group-hover:scale-110 group-hover:opacity-65 group-hover:grayscale-0" style={{ backgroundImage: `url('${asset('other/a.avif')}')` }} aria-hidden="true" />
+                <img
+                  src={asset('other/score-bg.avif')}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover opacity-50 grayscale transition-all duration-700 group-hover:scale-110 group-hover:opacity-65 group-hover:grayscale-0"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-sky-50/70 transition-opacity duration-500 group-hover:opacity-90 dark:from-slate-950/85 dark:to-sky-950/40" aria-hidden="true" />
                 <div className="relative">
                   <div className="mb-2 bg-gradient-to-r from-indigo-500 to-sky-500 bg-clip-text text-4xl font-bold text-transparent transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110">
@@ -119,7 +154,14 @@ export default function About() {
                 </div>
               </article>
               <article className="group magnetic-card brand-surface relative overflow-hidden rounded-xl border border-rose-200/80 p-6 text-center shadow-lg transition-all duration-500 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-500/20 dark:border-rose-300/20">
-                <div className="absolute inset-0 bg-cover bg-center opacity-50 filter grayscale transition-all duration-700 group-hover:scale-110 group-hover:opacity-65 group-hover:grayscale-0" style={{ backgroundImage: `url('${asset('other/a.avif')}')` }} aria-hidden="true" />
+                <img
+                  src={asset('other/score-bg.avif')}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover opacity-50 grayscale transition-all duration-700 group-hover:scale-110 group-hover:opacity-65 group-hover:grayscale-0"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-rose-50/70 transition-opacity duration-500 group-hover:opacity-90 dark:from-slate-950/85 dark:to-rose-950/40" aria-hidden="true" />
                 <div className="relative">
                   <div className="mb-2 bg-gradient-to-r from-lime-500 to-rose-500 bg-clip-text text-4xl font-bold text-transparent transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110">

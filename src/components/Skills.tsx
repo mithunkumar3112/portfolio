@@ -44,6 +44,8 @@ export default function Skills() {
                     <img
                       src={skill.src}
                       alt={skill.alt}
+                      loading="lazy"
+                      decoding="async"
                       className={`h-14 w-14 object-contain filter grayscale brightness-150 contrast-125 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 ${skill.extraClass ?? ''}`}
                     />
                     <p className="text-sm font-bold text-gray-900 dark:text-white">{skill.name}</p>

@@ -110,10 +110,13 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12">
           <Reveal direction="left" className="space-y-6">
             <div className="shine magnetic-card brand-surface relative overflow-hidden rounded-2xl p-8 shadow-lg">
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-                style={{ backgroundImage: `url('${asset('other/cc.avif')}')` }}
+              <img
+                src={asset('other/contact-bg.avif')}
+                alt=""
                 aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover opacity-30"
               />
               <div className="absolute inset-0 bg-black/40 dark:bg-black/50" aria-hidden="true" />
               <div className="relative">
@@ -178,10 +181,13 @@ export default function Contact() {
           </Reveal>
 
           <Reveal direction="right" className="shine magnetic-card brand-surface relative overflow-hidden rounded-2xl p-8 shadow-lg">
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-              style={{ backgroundImage: `url('${asset('other/cc.avif')}')` }}
+            <img
+              src={asset('other/contact-bg.avif')}
+              alt=""
               aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover opacity-30"
             />
             <div className="absolute inset-0 bg-black/40 dark:bg-black/50" aria-hidden="true" />
             <div className="relative">

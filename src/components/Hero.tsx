@@ -18,10 +18,14 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#f8fbff] dark:bg-[#07111f]"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 scale-105"
-        style={{ backgroundImage: `url('${asset('other/about.avif')}')` }}
+      <img
+        src={asset('other/about.avif')}
+        alt=""
         aria-hidden="true"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+        className="absolute inset-0 h-full w-full object-cover opacity-50 scale-105"
       />
       <div
         className="absolute inset-0 bg-[radial-gradient(circle_at_48%_18%,rgba(6,182,212,0.16),transparent_28rem),radial-gradient(circle_at_72%_68%,rgba(251,113,133,0.12),transparent_24rem)] dark:bg-[radial-gradient(circle_at_48%_18%,rgba(6,182,212,0.18),transparent_30rem),radial-gradient(circle_at_72%_68%,rgba(16,185,129,0.12),transparent_24rem)]"
