@@ -48,7 +48,7 @@ export default function Hero() {
         aria-hidden="true"
         loading="eager"
         decoding="async"
-        fetchPriority="high"
+        fetchpriority="high"
         className="absolute inset-0 h-full w-full object-cover opacity-50 scale-105"
       />
       <div

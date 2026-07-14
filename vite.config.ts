@@ -38,7 +38,6 @@ export default defineConfig(({ mode }) => {
     },
     esbuild: {
       drop: isProd ? ['console', 'debugger'] : [],
-      mangleProps: isProd ? /^_/ : undefined,
     },
   };
 });
