@@ -144,13 +144,24 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx" defer></script>
+    <script type="module" src="/src/main.tsx"></script>
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(() => {});
+      // Non-blocking service worker registration
+      (function() {
+        if (!('serviceWorker' in navigator)) return;
+        
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' })
+              .catch(function(err) {
+                // Service Worker registration failed - app will still work
+                if (typeof console !== 'undefined') {
+                  console.log('SW registration failed:', err);
+                }
+              });
+          }, 0);
         });
-      }
+      })();
     </script>
   </body>
 </html>

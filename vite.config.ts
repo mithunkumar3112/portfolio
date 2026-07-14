@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: env.VITE_BASE_PATH || '/',
+    publicDir: 'public',
     plugins: [react()],
     server: {
       headers: {
@@ -21,6 +22,7 @@ export default defineConfig(({ mode }) => {
       reportCompressedSize: false,
       assetsInlineLimit: 4096,
       assetsDir: 'assets',
+      outDir: 'dist',
       rollupOptions: {
         output: {
           manualChunks: {
