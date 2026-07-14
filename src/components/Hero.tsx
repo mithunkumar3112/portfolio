@@ -1,8 +1,32 @@
+import { useEffect } from 'react';
 import { ArrowDown, Briefcase, Code2, Download, Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Hero() {
   const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+  const heroImageUrl = asset('other/about.avif');
   const highlights = ['Spring Boot', 'React.js', 'REST APIs', 'MySQL'];
+
+  useEffect(() => {
+    const existingLink = document.head.querySelector('link[data-hero-preload="true"]');
+
+    if (!existingLink) {
+      const preloadLink = document.createElement('link');
+      preloadLink.setAttribute('data-hero-preload', 'true');
+      preloadLink.rel = 'preload';
+      preloadLink.as = 'image';
+      preloadLink.href = heroImageUrl;
+      preloadLink.type = 'image/avif';
+      preloadLink.fetchPriority = 'high';
+      document.head.appendChild(preloadLink);
+    }
+
+    return () => {
+      const currentLink = document.head.querySelector('link[data-hero-preload="true"]');
+      if (currentLink) {
+        currentLink.remove();
+      }
+    };
+  }, [heroImageUrl]);
 
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
@@ -19,7 +43,7 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#f8fbff] dark:bg-[#07111f]"
     >
       <img
-        src={asset('other/about.avif')}
+        src={heroImageUrl}
         alt=""
         aria-hidden="true"
         loading="eager"
