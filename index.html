@@ -10,7 +10,16 @@
     <meta name="theme-color" content="#07111f" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preload" as="image" href="/other/about.avif" fetchpriority="high" />
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyYAZV0.woff2" crossorigin type="font/woff2" />
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/spacegrotesk/v15/V8mQoQDjQikL0jVgFZBjV0tYPZBFh_fW7KRz41RQzOE.woff2" crossorigin type="font/woff2" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" />
+    </noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mithun Kumar N - Java Full Stack Developer | React & Spring Boot Expert</title>
     <meta name="description" content="Full Stack Developer specializing in Java, Spring Boot, React.js, and MySQL. Crafting scalable, responsive web applications and digital solutions." />
@@ -52,7 +61,12 @@
               "Spring Boot",
               "React.js",
               "MySQL",
+              "HTML",
+              "CSS",
+              "JavaScript",
               "REST APIs",
+              "Microservices",
+              "Web Development",
               "Full Stack Development",
               "Software Engineering"
             ],
@@ -130,6 +144,13 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" defer></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
   </body>
 </html>

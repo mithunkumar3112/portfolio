@@ -99,15 +99,6 @@
     }
   }
 
-  @keyframes slideIn {
-    from {
-      width: 0;
-    }
-    to {
-      width: var(--final-width);
-    }
-  }
-
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -125,15 +116,6 @@
     to {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
     }
   }
 
@@ -240,10 +222,6 @@
   .reveal.is-visible {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
-  }
-
-  .glass-panel {
-    @apply border border-teal-400/15 bg-white/80 shadow-2xl shadow-teal-950/10 backdrop-blur-xl dark:bg-white/5 dark:shadow-teal-300/10;
   }
 
   .magnetic-card {

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Mail, Phone, Send, Linkedin, Globe, CheckCircle } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 import Reveal from './Reveal';
 
 
@@ -29,6 +28,8 @@ export default function Contact() {
   setIsSubmitting(true);
 
   try {
+    const { default: emailjs } = await import('@emailjs/browser');
+
     await emailjs.send(
       'service_8h4dwkg',
       'template_unzvphc',
