@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://myportfolio-ziu1.onrender.com/sitemap.xml
-Host: myportfolio-ziu1.onrender.com
+Sitemap: https://portfolio-t3x5.onrender.com/sitemap.xml
+Host: portfolio-t3x5.onrender.com
